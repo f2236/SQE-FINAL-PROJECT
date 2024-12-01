@@ -11,7 +11,7 @@ public class AppTest {
 
     private ArrayList<App.Contact> contacts;
 
-@BeforeEach    
+    @BeforeEach    
     public void setUp() {
         // This will run before each test, resetting the contacts list.
         contacts = new ArrayList<>();
@@ -91,5 +91,23 @@ public class AppTest {
         contacts.add(contact2);
 
         assertEquals(2, contacts.size(), "Two contacts with the same name should be allowed in the list.");
+    }
+
+    // Test Case 7: Delete Contact
+    @Test
+    public void testDeleteContact() {
+        App.Contact contact1 = new App.Contact("John Doe", "1234567890");
+        App.Contact contact2 = new App.Contact("Jane Smith", "0987654321");
+
+        contacts.add(contact1);
+        contacts.add(contact2);
+
+        // Now, let's remove the "John Doe" contact
+        contacts.remove(contact1);
+
+        // Assert that the contact list no longer contains "John Doe"
+        assertFalse(contacts.contains(contact1), "Contact 'John Doe' should be removed from the list.");
+        // Assert that the contact list still contains "Jane Smith"
+        assertTrue(contacts.contains(contact2), "Contact 'Jane Smith' should still be in the list.");
     }
 }
