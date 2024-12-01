@@ -1,4 +1,4 @@
-name: CI Pipeline
+# CI Pipeline Configuration
 
 # Trigger the pipeline on push to the main branch
 on:
@@ -25,10 +25,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'  # Use 'temurin' for Adoptium JDK
 
-      # Step 3: Build the project using Maven
-      - name: Build with Maven
-        run: mvn clean install
+      # Step 3: Build the project using Maven (without skipping tests)
+      - name: Build and test with Maven
+        run: mvn clean install -DskipTests=false
 
-      # Step 4: Run unit tests (optional, this is for testing purposes)
+      # Step 4: Run unit tests
       - name: Run tests
         run: mvn test
+        env:
+          MAVEN_OPTS: "-Xmx2g"
