@@ -1,0 +1,168 @@
+package com.example;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+
+public class App {
+    // List to store the contacts
+    private static ArrayList<Contact> contacts = new ArrayList<>();
+
+    // Contact class to represent a contact
+    static class Contact {
+        private String name;
+        private String phoneNumber;
+
+        // Constructor
+        public Contact(String name, String phoneNumber) {
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+        }
+
+        // Getters
+        public String getName() {
+            return name;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        @Override
+        public String toString() {
+            return "Contact: " + name + ", Phone: " + phoneNumber;
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(App::createAndShowGUI);
+    }
+
+    // Method to create and display the GUI
+    private static void createAndShowGUI() {
+        JFrame frame = new JFrame("Contact Management System");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Make the window full-screen
+        frame.setLayout(new BorderLayout());
+
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(10, 10, 10, 10);
+
+        JButton addButton = createButton("Add Contact");
+        JButton viewButton = createButton("View Contacts");
+        JButton searchButton = createButton("Search Contact");
+        JButton exitButton = createButton("Exit");
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(addButton, gbc);
+        gbc.gridy = 1;
+        panel.add(viewButton, gbc);
+        gbc.gridy = 2;
+        panel.add(searchButton, gbc);
+        gbc.gridy = 3;
+        panel.add(exitButton, gbc);
+
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setVisible(true);
+
+        // Action listeners for buttons
+        addButton.addActionListener(e -> addContact());
+        viewButton.addActionListener(e -> viewContacts());
+        searchButton.addActionListener(e -> searchContact());
+        exitButton.addActionListener(e -> System.exit(0));
+    }
+
+    private static JButton createButton(String text) {
+        JButton button = new JButton(text);
+        button.setPreferredSize(new Dimension(150, 30)); // Adjust the size of the buttons
+        return button;
+    }
+
+    // Method to add a contact
+    private static void addContact() {
+        JFrame addFrame = new JFrame("Add Contact");
+        addFrame.setSize(300, 200);
+        addFrame.setLayout(new GridLayout(3, 2));
+
+        JLabel nameLabel = new JLabel("Name:");
+        JTextField nameField = new JTextField();
+        JLabel phoneLabel = new JLabel("Phone Number:");
+        JTextField phoneField = new JTextField();
+        JButton saveButton = new JButton("Save");
+
+        addFrame.add(nameLabel);
+        addFrame.add(nameField);
+        addFrame.add(phoneLabel);
+        addFrame.add(phoneField);
+        addFrame.add(new JLabel()); // empty cell
+        addFrame.add(saveButton);
+
+        addFrame.setVisible(true);
+
+        saveButton.addActionListener(e -> {
+            String name = nameField.getText();
+            String phoneNumber = phoneField.getText();
+            contacts.add(new Contact(name, phoneNumber));
+            JOptionPane.showMessageDialog(addFrame, "Contact added successfully!");
+            addFrame.dispose();
+        });
+    }
+
+    // Method to view all contacts
+    private static void viewContacts() {
+        JFrame viewFrame = new JFrame("View Contacts");
+        viewFrame.setSize(300, 200);
+        viewFrame.setLayout(new BorderLayout());
+
+        JTextArea textArea = new JTextArea();
+        if (contacts.isEmpty()) {
+            textArea.setText("No contacts found.");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            for (Contact contact : contacts) {
+                sb.append(contact).append("\n");
+            }
+            textArea.setText(sb.toString());
+        }
+
+        viewFrame.add(new JScrollPane(textArea), BorderLayout.CENTER);
+        viewFrame.setVisible(true);
+    }
+
+    // Method to search a contact by name
+    private static void searchContact() {
+        JFrame searchFrame = new JFrame("Search Contact");
+        searchFrame.setSize(300, 200);
+        searchFrame.setLayout(new GridLayout(2, 1));
+
+        JTextField searchField = new JTextField();
+        JButton searchButton = new JButton("Search");
+
+        searchFrame.add(searchField);
+        searchFrame.add(searchButton);
+
+        searchFrame.setVisible(true);
+
+        searchButton.addActionListener(e -> {
+            String name = searchField.getText();
+            boolean found = false;
+            StringBuilder result = new StringBuilder();
+
+            for (Contact contact : contacts) {
+                if (contact.getName().equalsIgnoreCase(name)) {
+                    result.append(contact).append("\n");
+                    found = true;
+                }
+            }
+
+            if (found) {
+                JOptionPane.showMessageDialog(searchFrame, result.toString(), "Search Result", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(searchFrame, "Contact not found.", "Search Result", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+    }
+}

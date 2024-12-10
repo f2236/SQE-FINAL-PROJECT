@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppTest" project="ContactManager" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.AppTest" time="0.001" displayname="AppTest" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]">
+    <testcase name="testDeleteContact" classname="com.example.AppTest" time="0.0" displayname="testDeleteContact()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testDeleteContact()]"/>
+    <testcase name="testViewContacts_NoContacts" classname="com.example.AppTest" time="0.0" displayname="testViewContacts_NoContacts()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testViewContacts_NoContacts()]"/>
+    <testcase name="testViewContacts_WithContacts" classname="com.example.AppTest" time="0.0" displayname="testViewContacts_WithContacts()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testViewContacts_WithContacts()]"/>
+    <testcase name="testSearchContact_NotFound" classname="com.example.AppTest" time="0.0" displayname="testSearchContact_NotFound()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testSearchContact_NotFound()]"/>
+    <testcase name="testAddDuplicateContact" classname="com.example.AppTest" time="0.0" displayname="testAddDuplicateContact()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testAddDuplicateContact()]"/>
+    <testcase name="testSearchContact_Found" classname="com.example.AppTest" time="0.0" displayname="testSearchContact_Found()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testSearchContact_Found()]"/>
+    <testcase name="testAddContact" classname="com.example.AppTest" time="0.001" displayname="testAddContact()" uniqueid="[engine:junit-jupiter]/[class:com.example.AppTest]/[method:testAddContact()]"/>
+  </testsuite>
+</testrun>

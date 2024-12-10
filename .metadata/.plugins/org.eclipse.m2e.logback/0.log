@@ -1,0 +1,18 @@
+2024-12-10 23:48:46,723 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-12-10 23:49:35,189 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ContactManager:1.0-SNAPSHOT @ C:\Users\Admin\Desktop\MAVEN\ContactManager\pom.xml.
+2024-12-10 23:49:41,180 [Worker-3: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:49:41,183 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\main\resources
+2024-12-10 23:49:41,193 [Worker-3: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:49:41,195 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\test\resources
+2024-12-10 23:49:42,626 [Worker-9: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:49:42,628 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\main\resources
+2024-12-10 23:49:42,633 [Worker-9: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:49:42,635 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\test\resources
+2024-12-10 23:54:37,921 [Worker-0: Launching App] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:54:37,924 [Worker-0: Launching App] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\main\resources
+2024-12-10 23:54:37,929 [Worker-0: Launching App] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-10 23:54:37,931 [Worker-0: Launching App] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\test\resources
+2024-12-11 00:00:44,209 [Worker-0: Launching App] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-11 00:00:44,211 [Worker-0: Launching App] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\main\resources
+2024-12-11 00:00:44,215 [Worker-0: Launching App] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-11 00:00:44,217 [Worker-0: Launching App] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Admin\Desktop\MAVEN\ContactManager\src\test\resources
